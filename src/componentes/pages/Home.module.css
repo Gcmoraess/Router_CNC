@@ -1,0 +1,15 @@
+.home_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    
+
+}
+
+.home_container img {
+    width: 500px;
+    height: 500px;
+    margin-left: 40em;
+  
+}
