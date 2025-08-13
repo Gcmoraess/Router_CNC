@@ -1,0 +1,79 @@
+.listaSensores {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    background-color: #222;
+    padding: 30px;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.sensorItem {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: #333;
+    padding: 10px 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.sensorItem p {
+    color: white;
+    margin: 0;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.circulo {
+    width: 60px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: blue;
+}
+
+.closeButton {
+  margin-top: 10px;
+  background-color: #333;
+  color: white;
+  padding: 0.5em 1.2em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.closeButton:hover {
+  background-color: #555;
+}
+
+.botaoEscuro {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px; /* Espaço em cima do botão */
+  width: 100%;
+}
+
+
+.escuro {
+  background-color: #333;
+  color: white;
+  padding: 1em 2.2em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+}
+
+.escuro:hover {
+   background-color: #555;
+}

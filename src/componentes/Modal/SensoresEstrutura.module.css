@@ -1,0 +1,55 @@
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    gap: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1 fr;
+    background-color: #222;
+    color: white;
+    padding: 5em;
+    border-radius: 15px;
+}
+
+.sensores {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: #333;
+    padding: 10px 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    font-weight: bold;
+     font-size: 25px;
+}
+
+.sensorItem p {
+    color: white;
+    margin: 0;
+}
+
+.circulo {
+    width: 50px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: blue;
+}
+
+.closeButton {
+  margin-top: 4em;
+  background-color: #333;
+  color: white;
+  padding: 0.5em 1.2em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.closeButton:hover {
+  background-color: #555;
+}
+
+
