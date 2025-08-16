@@ -9,11 +9,7 @@ function Navbar () {
     <nav className={styles.navbar}>   
     <Container> 
 
-<<<<<<< HEAD
-        <Link to="/">
-=======
         <Link to="/" className={styles.imglogo}>
->>>>>>> 0d2ab63 (segundo commit)
         <img src={logoSyntro} alt="CNC Router" width="100px" height="100px"/>
         </Link>
 

@@ -9,19 +9,33 @@
 
     function HomeLeds() {
     const [open, setOpen] = useState(false);
-    const [setado, setSetado] = useState(false);
+    const [LedsOn, setLedsOn] = useState(false);
 
-    const mudarEstadoOnOff = () => {
-        setSetado(on => !on);
+    const sendCommand = async (LedsOnOff) => {
+    try {
+      const response = await fetch('http://localhost:5000/api/led', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ color: LedsOnOff }), // muda para "color", que o Python espera
+      });
+      if (!response.ok) throw new Error('Network error');
+      console.log(`Comando enviado: ${LedsOnOff}`);
+    } catch (error) {
+      console.error('Erro ao enviar comando:', error);
     }
+  };
 
-    if (setado) {
-        console.log('Leds ligados')
-    }
-    else {
-        console.log('Leds desligados')
-    }
+  const mudarEstadoOnOff = () => {
+    setLedsOn(prev => {
+      const next = !prev;
+      console.log(next ? 'Leds ON' : 'Leds OFF');
 
+      // envia comando para a API
+      sendCommand(next ? 'ON' : 'OFF');
+
+      return next;
+    });
+  };
         return (
 
             <div className={styles.container_homeLeds}>
@@ -31,8 +45,8 @@
             
                     <button className={styles.buttons}>Efeitos <BsController /></button>
             
-                    <button  className={`${styles.buttons} ${setado ? styles.setado : ''}`} onClick={mudarEstadoOnOff}>
-                   ON/OFF <FaPowerOff /></button>
+                    <button  className={`${styles.buttons} ${LedsOn ? styles.LedsOn : ''}`} onClick={mudarEstadoOnOff}> 
+                        {LedsOn ? 'ON' : 'OFF'} <FaPowerOff /></button>
             
             </div>
         )

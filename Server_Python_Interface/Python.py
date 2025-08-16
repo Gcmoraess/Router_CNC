@@ -29,8 +29,8 @@ def control_led():
             'yellow': 'Y',
             'cyan' : 'C',
             'purple' : 'P',
-            'on': 'ON',
-            'off': 'OFF',
+            'ON': 'ON',
+            'OFF': 'OFF',
         }
         arduino_command = command_map.get(color, color)  # Usa o comando mapeado
         valid_commands = ['G', 'R', 'B', 'Y', 'C', 'P', 'ON', 'OFF']

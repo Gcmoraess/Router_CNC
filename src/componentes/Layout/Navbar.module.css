@@ -23,13 +23,10 @@
 .item a:hover {
     color: #4726db;
     text-decoration: none;
-<<<<<<< HEAD
-=======
     transition: 0.5s;
 }
 
 .imglogo {
     display: flex;
     align-items: center;
->>>>>>> 0d2ab63 (segundo commit)
 }
