@@ -45,7 +45,7 @@ function NivelAgua() {
                 strokeWidth={2}
                 dot={true}
                 isAnimationActive={false}
-                animationDuration={1000}
+                //animationDuration={1000}
             />
           </LineChart>
         </ResponsiveContainer>
