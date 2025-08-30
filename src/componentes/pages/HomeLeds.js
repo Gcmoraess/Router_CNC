@@ -5,11 +5,12 @@
 
     import styles from './HomeLeds.module.css'
     import ModalLeds from '../Modal/ModalLeds';
-
+    import ModalEfeitos from '../Modal/ModalEfeitos'
 
     function HomeLeds() {
     const [open, setOpen] = useState(false);
     const [LedsOn, setLedsOn] = useState(false);
+    const [openModal, setModal] = useState(false);
 
     const sendCommand = async (LedsOnOff) => {
     try {
@@ -43,8 +44,9 @@
                     <button className={styles.buttons} onClick={() => setOpen(!open)}>Cores <IoIosColorPalette /></button>
                     <ModalLeds isOpen={open} setOpen={setOpen}/>
             
-                    <button className={styles.buttons}>Efeitos <BsController /></button>
-            
+                    <button className={styles.buttons} onClick={() => setModal(!openModal)}>Efeitos <BsController /></button>
+                    <ModalEfeitos isOpen2={openModal} setModal={setModal} /> 
+
                     <button  className={`${styles.buttons} ${LedsOn ? styles.LedsOn : ''}`} onClick={mudarEstadoOnOff}> 
                         {LedsOn ? 'ON' : 'OFF'} <FaPowerOff /></button>
             

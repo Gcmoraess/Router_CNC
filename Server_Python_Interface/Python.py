@@ -14,6 +14,8 @@ command_map = {
     'red': 'R',
     'blue': 'B',
     'yellow': 'Y',
+    'cyan' : 'C',
+    'purple' : 'P',
     'ON': 'ON',
     'OFF': 'OFF'
 }

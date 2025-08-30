@@ -1,0 +1,99 @@
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    background-color: #222;
+    color: white;
+    padding: 6em;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.modal h1 {
+    margin-bottom: 1em;
+}
+
+.colorGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 1em;
+}
+
+.colorGrid button:hover {
+  transform: scale(1.05);
+}
+
+/* Cores */
+.vermelho {
+    background-color: #e63946;
+    color: white;
+}
+
+.verde {
+    background-color: #05ca4d;
+    color: white;
+}
+
+.amarelo {
+    background-color: #ffff00;
+    color: black;
+}
+
+.azul {
+    background-color: #5512ff;
+    color: white;
+}
+
+.ciano {
+    background-color: #00bcd4;
+    color: white;
+}
+
+.roxo {
+    background-color: #9b5de5;
+    color: white;
+}
+
+
+
+/* Estilo geral para os botões */
+.colorGrid button {
+    margin-top: 15px;
+    padding: 25px 60px;
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 20px;
+}
+
+.colorGrid button:hover {
+    opacity: 0.8;
+}
+
+.closeButton {
+  margin-top: 1.5em;
+  background-color: #333;
+  color: white;
+  padding: 0.5em 1.2em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.closeButton:hover {
+  background-color: #555;
+}
+
