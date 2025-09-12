@@ -1,58 +1,50 @@
-import {useState, useEffect} from 'react'
+import React, { useEffect, useRef } from "react";
+import uPlot from "uplot";
+import "uplot/dist/uPlot.min.css";
 
-import  {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer
-} from 'recharts';
+function WaterLevelChart() {
+  const chartRef = useRef(null);
+  const uplotRef = useRef(null);
 
-import style from './HomeNivelAgua.module.css'
-
-function NivelAgua() {
-    const [data, setData] = useState ([])
-
-    // Simula entrada de dados a cada 1 segundo
   useEffect(() => {
+    const data = [
+      [0], // eixo X (tempo)
+      [0], // eixo Y (nível de água)
+    ];
+
+    const options = {
+      width: 400,
+      height: 200,
+      title: "Nível de Água",
+      scales: {
+        x: { time: false },
+        y: { auto: true },
+      },
+      series: [
+        {},
+        {
+          label: "Nível",
+          stroke: "blue",
+          fill: "rgba(0, 0, 255, 0.2)",
+        },
+      ],
+    };
+
+    uplotRef.current = new uPlot(options, data, chartRef.current);
+
+    // Simulação: adiciona dados a cada segundo
+    let t = 1;
     const interval = setInterval(() => {
-      setData(prevData => {
-        const novoValor = Math.floor(Math.random() * 100); // de 0 a 100%
-        const timestamp = new Date().toLocaleTimeString();
-
-        const novoDado = { tempo: timestamp, nivel: novoValor };
-
-        // Mantém só os últimos 10 valores
-        const novosDados = [...prevData, novoDado].slice(-10);
-        return novosDados;
-      });
+      data[0].push(t);
+      data[1].push(Math.random() * 100); // simulação de nível
+      uplotRef.current.setData(data);
+      t++;
     }, 1000);
 
-    return () => clearInterval(interval); // limpa o intervalo se o componente for desmontado
+    return () => clearInterval(interval);
   }, []);
 
-    return (
-
- <div className={style.container}>
-      <h2 className={style.titulo}>Nível de Água (Real Time)</h2>
-      <div className={style.graficoWrapper}>
-        <ResponsiveContainer width="100%" height={300}>
-          <LineChart data={data}>
-            <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
-            <XAxis dataKey="tempo" />
-            <YAxis domain={[0, 100]} unit="%" />
-            
-            <Line
-                type="monotone"
-                dataKey="nivel"
-                stroke="#0044cc"
-                strokeWidth={2}
-                dot={true}
-                isAnimationActive={false}
-                //animationDuration={1000}
-            />
-          </LineChart>
-        </ResponsiveContainer>
-      </div>
-    </div>
-  );
+  return <div ref={chartRef}></div>;
 }
 
-
-export default NivelAgua
+export default WaterLevelChart;

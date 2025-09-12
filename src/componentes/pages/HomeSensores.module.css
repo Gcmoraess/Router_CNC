@@ -4,26 +4,13 @@
     align-items: center;
 }
 
-.button {
-    
-    background-color: #222;
-    padding: 25px 55px;
-    color: #FFF;
-    border-radius: 15px;
-    font-size: 1.5em;
-    cursor: pointer ;
-    transition: 0.5s;  
-    font-weight: bold;
-    margin-left: 40px;
-  
-}
 
 .button:hover {
     color: blue;
 }
 
 .buttonSRouter {
-    background-color: #222;
+    background-color: #2371e7;
     padding: 25px 55px;
     color: #FFF;
     border-radius: 15px;
@@ -35,11 +22,11 @@
 }
 
 .buttonSRouter:hover {
-    color: blue;
+    color: black
 }
 
 .buttonEstrutura {
-    background-color: #222;
+    background-color: #2371e7;
     padding: 25px 55px;
     color: #FFF;
     border-radius: 15px;
@@ -51,5 +38,5 @@
 }
 
 .buttonEstrutura:hover {
-    color: blue;
+    color: black
 }

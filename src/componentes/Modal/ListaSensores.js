@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import style from './ListaSensores.module.css';
-import ModalModoEscuro from '../Modal/ModalModoEscuro';
+import ModalModoEscuro from './ModalModoEscuro';
 
-function ListaSensores({ isOpenLS, setOpenList, itens }) {
+function ListaSensores({ isOpenLS, setOpenList, itens, className }) {
     const [openModoEscuro, setOpenModoEscuro] = useState(false);
 
-    if (isOpenLS) 
+    if (!isOpenLS) return null;
 
     return (
         <>
-            <div className={style.listaSensores}>
+            <div className={`${style.listaSensores} ${className || ''}`}>
                 {itens.map((item, index) => (
                     <div key={index} className={style.sensorItem}>
                         <span className={style.circulo}></span>
@@ -18,16 +18,21 @@ function ListaSensores({ isOpenLS, setOpenList, itens }) {
                 ))}
 
                 {/* Botão para fechar a lista */}
-            <div>
-                <button
-                    className={style.closeButton} onClick={() => setOpenList(false)}>
-                      Fechar
-                </button>
-            </div>
+                <div>
+                    <button
+                        className={style.closeButton} 
+                        onClick={() => setOpenList(false)}
+                    >
+                        Fechar
+                    </button>
+                </div>
 
                 {/* Botão para abrir o Modal */}
                 <div className={style.botaoEscuro}>
-                    <button className={style.escuro} onClick={() => setOpenModoEscuro(true)}>
+                    <button 
+                        className={style.escuro} 
+                        onClick={() => setOpenModoEscuro(true)}
+                    >
                         Modo Escuro
                     </button>
                 </div>
@@ -39,13 +44,8 @@ function ListaSensores({ isOpenLS, setOpenList, itens }) {
                 isOpen={openModoEscuro}
                 setOpen={setOpenModoEscuro}
             />
-
-        
         </>
     );
-    else {
-        return null
-    }
 }
 
 export default ListaSensores;

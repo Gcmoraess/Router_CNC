@@ -1,6 +1,7 @@
 import style from './SensoresEstrutura.module.css'
 
 function SensoresEstrutura ({isOpen3, setOpenEstrutura, itens1}) {
+    
     if (isOpen3) {
     return (
         <>

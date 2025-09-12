@@ -1,11 +1,27 @@
 import style from './HomeDashbord.module.css'
-import NivelAgua from './HomeNivelAgua'
+import ListaSensores from '../Modal/ListaSensores'
+import { useState } from 'react'
 
-function Dashbord () {
+// Importando diretamente o array de sensores
+const sensoresDaRouter = [  
+    'Sensor X avançado', 'Sensor X recuado', 'Sensor Y avançado',
+    'Sensor Y recuado', 'Sensor Z recuado', 'Sensor Home Y',
+    'Sensor Home Z', 'Sensor Home X' 
+]
+
+function Dashbord() {
+    const [openList, setOpenList] = useState(true)
+    
     return (
-        <div className={style.container}>
-            <NivelAgua />
-        </div>
+        
+          
+                <ListaSensores 
+                    itens={sensoresDaRouter} 
+                    isOpenLS={openList} 
+                    setOpenList={setOpenList} 
+                    className={style.listaDashbord}
+                />
+        
     )
 }
 

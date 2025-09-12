@@ -12,6 +12,7 @@
     gap: 50px 50px;
     margin-right: 6rem; 
     text-decoration: none;
+    
 }
 
 .buttons_container a{
@@ -32,7 +33,7 @@
     justify-content: center; /* centraliza o texto horizontalmente */
     align-items: center;     /* centraliza verticalmente */
     flex-direction: column;
-    background-color: #222;
+    background-color: #2371e7;
     padding: 15px 55px;
     color: #FFF;
     border-radius: 15px;
@@ -40,10 +41,13 @@
     cursor: pointer;
     transition: 0.5s;  
     font-weight: bold;
+    
 }
 .button1:hover,
 .button2:hover
 {
-    color:  #4726db;
+    color:  #110250;
     transition: 0.5s;
+    opacity: 0.5;
+    transform: scale(1.05);
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import style from './HomeSensores.module.css'
-import ListaSensores from '../Layout/ListaSensores'
+import ListaSensores from '../Modal/ListaSensores'
 import SensoresEstrutura from '../Modal/SensoresEstrutura'
 
 function HomeSensores () {

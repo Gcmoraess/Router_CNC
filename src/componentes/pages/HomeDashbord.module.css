@@ -1,8 +1,15 @@
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
+
+.listaDashbord {
+    position: static; /* sobrescreve o fixed */
+    transform: scale(0.8);  /* 80% do tamanho original */
+    transform-origin: top left; /* mantém posição correta */
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #222;
+    margin-left: 5px;
+    margin-top: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+ 
 }
