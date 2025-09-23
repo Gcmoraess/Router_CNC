@@ -17,7 +17,7 @@ function Home () {
         </Link>
 
         <Link to="/homeSensores">
-        <button className={styles.button1}>Sensores <MdOutlineSensors /></button>
+        <button className={styles.button1}>Sensors <MdOutlineSensors /></button>
         </Link>
 
         <Link to="/homeCamera">
@@ -25,7 +25,7 @@ function Home () {
         </Link>
 
         <Link to="/homeNivelAgua">
-        <button className={styles.button2}>Nivel agua <FaWater /></button>
+        <button className={styles.button2}>Water level <FaWater /></button>
         </Link>
 
         <Link to="/homeLeds">

@@ -1,15 +1,25 @@
-
-.listaDashbord {
-    position: static; /* sobrescreve o fixed */
-    transform: scale(0.8);  /* 80% do tamanho original */
-    transform-origin: top left; /* mantém posição correta */
-
+.container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 1px;               /* espaço entre os dois elementos */
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.listaDashbord, .listaDashbord2 {
+    position: static; /* sobrescreve o fixed */
+    transform: scale(0.9);  /* 80% do tamanho original */
+    transform-origin: top left; /* mantém posição correta */
+
     background-color: #222;
-    margin-left: 5px;
+    margin-left: 1px;
     margin-top: 15px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
  
 }
+
+.homeNivelAgua {
+    max-width: 500px;        /* largura máxima para o gráfico */
+}
+

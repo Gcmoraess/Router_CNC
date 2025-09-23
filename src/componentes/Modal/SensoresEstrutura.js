@@ -1,11 +1,12 @@
 import style from './SensoresEstrutura.module.css'
 
-function SensoresEstrutura ({isOpen3, setOpenEstrutura, itens1}) {
+function SensoresEstrutura ({isOpen3, setOpenEstrutura, itens1, className}) {
     
     if (isOpen3) {
     return (
         <>
-        <div className={style.container}>
+        
+        <div className={`${style.container} ${className || ''}`}>
 
         {
         itens1.map((itens1, index) => (

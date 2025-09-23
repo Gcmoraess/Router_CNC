@@ -41,10 +41,10 @@
 
             <div className={styles.container_homeLeds}>
         
-                    <button className={styles.buttons} onClick={() => setOpen(!open)}>Cores <IoIosColorPalette /></button>
+                    <button className={styles.buttons} onClick={() => setOpen(!open)}>Colors <IoIosColorPalette /></button>
                     <ModalLeds isOpen={open} setOpen={setOpen}/>
             
-                    <button className={styles.buttons} onClick={() => setModal(!openModal)}>Efeitos <BsController /></button>
+                    <button className={styles.buttons} onClick={() => setModal(!openModal)}>Effects <BsController /></button>
                     <ModalEfeitos isOpen2={openModal} setModal={setModal} /> 
 
                     <button  className={`${styles.buttons} ${LedsOn ? styles.LedsOn : ''}`} onClick={mudarEstadoOnOff}> 

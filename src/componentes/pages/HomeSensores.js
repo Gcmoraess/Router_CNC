@@ -6,8 +6,8 @@ import SensoresEstrutura from '../Modal/SensoresEstrutura'
 function HomeSensores () {
 
 const sensoresDaRouter = [  
-    'Sensor X avançado', 'Sensor X recuado', 'Sensor Y avançado',
-    'Sensor Y recuado', 'Sensor Z recuado', 'Sensor Home Y',
+    'Sensor X AV', 'Sensor X RC', 'Sensor Y AV',
+    'Sensor Y RC', 'Sensor Z RC', 'Sensor Home Y',
     'Sensor Home Z', 'Sensor Home X' ]
 
 const sensoresEstruturaRouter = [
@@ -22,10 +22,10 @@ const [OpenEstrutura, setOpenEstrutura] = useState (false)
         
         <div className={style.container}>
 
-            <button className={style.buttonSRouter} onClick={() => setOpenList(!OpenLS)} >Sensores da Router</button>
+            <button className={style.buttonSRouter} onClick={() => setOpenList(!OpenLS)} >Router sensors</button>
             <ListaSensores itens={sensoresDaRouter} isOpenLS={OpenLS} setOpenList={setOpenList}/>
 
-            <button className={style.buttonEstrutura} onClick={() => setOpenEstrutura(!OpenEstrutura)}>Sensores da estrutura</button>
+            <button className={style.buttonEstrutura} onClick={() => setOpenEstrutura(!OpenEstrutura)}>Structure sensors</button>
             <SensoresEstrutura itens1={sensoresEstruturaRouter} isOpen3={OpenEstrutura} setOpenEstrutura={setOpenEstrutura}/> 
 
         </div>

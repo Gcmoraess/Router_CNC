@@ -3,6 +3,7 @@ import style from './ListaSensores.module.css';
 import ModalModoEscuro from './ModalModoEscuro';
 
 function ListaSensores({ isOpenLS, setOpenList, itens, className }) {
+    
     const [openModoEscuro, setOpenModoEscuro] = useState(false);
 
     if (!isOpenLS) return null;

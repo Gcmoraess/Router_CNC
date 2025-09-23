@@ -22,7 +22,10 @@
 }
 
 .buttonSRouter:hover {
-    color: black
+    color:  #110250;
+    transition: 0.5s;
+    opacity: 0.5;
+    transform: scale(1.05);
 }
 
 .buttonEstrutura {
@@ -38,5 +41,8 @@
 }
 
 .buttonEstrutura:hover {
-    color: black
+    color:  #110250;
+    transition: 0.5s;
+    opacity: 0.5;
+    transform: scale(1.05);
 }

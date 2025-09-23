@@ -7,6 +7,7 @@ import HomeLeds from './componentes/pages/HomeLeds'
 import HomeSensores from './componentes/pages/HomeSensores'
 import HomeNivelAgua from './componentes/pages/HomeNivelAgua'
 import HomeDashbord from './componentes/pages/HomeDashbord'
+import HomeCamera from './componentes/pages/HomeCamera'
 
 import Container from "./componentes/Layout/Container"
 import Navbar from './componentes/Layout/Navbar'
@@ -30,6 +31,7 @@ function App() {
        <Route exact path= "/HomeSensores" element={<HomeSensores/>}/>
        <Route exact path= "/HomeNivelAgua" element={<HomeNivelAgua/>}/>
        <Route exact path= "/HomeDashbord" element={<HomeDashbord/>}/>
+       <Route exact path= "/HomeCamera" element={<HomeCamera/>}/>
      </Routes>
      </Container>
     
