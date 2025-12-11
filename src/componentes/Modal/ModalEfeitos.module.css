@@ -8,6 +8,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    z-index: 9998; /* 🔥 Novo: garante que o fundo escuro fica acima de tudo */
 }
 
 .modal {
@@ -16,6 +18,9 @@
     padding: 6em;
     border-radius: 15px;
     text-align: center;
+
+    z-index: 9999; /* 🔥 Novo: o conteúdo do modal fica ainda mais acima */
+    position: relative; /* 🔥 Necessário para o z-index funcionar */
 }
 
 .modal h1 {
@@ -64,8 +69,6 @@
     color: white;
 }
 
-
-
 /* Estilo geral para os botões */
 .colorGrid button {
     margin-top: 15px;
@@ -96,4 +99,3 @@
 .closeButton:hover {
   background-color: #555;
 }
-

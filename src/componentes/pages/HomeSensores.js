@@ -7,8 +7,8 @@ function HomeSensores () {
 
 const sensoresDaRouter = [  
     'Sensor X AV', 'Sensor X RC', 'Sensor Y AV',
-    'Sensor Y RC', 'Sensor Z RC', 'Sensor Home Y',
-    'Sensor Home Z', 'Sensor Home X' ]
+    'Sensor Y RC', 'Sensor Z RC', 'Home Y',
+    'Home Z', 'Home X' ]
 
 const sensoresEstruturaRouter = [
     'Sensor Porta', 'Sensor nivel de Agua' 

@@ -1,12 +1,15 @@
 from flask import Flask, request
 from flask_cors import CORS
-import requests
+import serial
+import time
 
 app = Flask(__name__)
 CORS(app)
 
-# IP do Arduino na rede
-ARDUINO_IP = "http://192.168.0.155/led"
+# Inicializa a comunicação serial com o Arduino
+# (ajuste a porta e a velocidade se necessário)
+arduino = serial.Serial(port='COM3', baudrate=9600, timeout=1)
+time.sleep(2)  # dá tempo do Arduino resetar ao abrir a porta
 
 # Mapeamento de cores
 color_map = {
@@ -34,22 +37,20 @@ effect_map = {
 def control_led():
     try:
         data = request.get_json()
-
-        # verifica se veio cor ou efeito
         color = data.get('color')
         effect = data.get('effect')
 
         if color:
             arduino_command = color_map.get(color, color)
-            response = requests.get(f"{ARDUINO_IP}?color={arduino_command}", timeout=3)
-            print(f"Recebido cor do React: {color}")
+            arduino.write((arduino_command + '\n').encode())
+            print(f"Recebido do React: {color}")
             print(f"Enviado para Arduino: {arduino_command}")
             return {"status": "success", "color": color}, 200
 
         elif effect:
             arduino_command = effect_map.get(effect, effect)
-            response = requests.get(f"{ARDUINO_IP}?effect={arduino_command}", timeout=3)
-            print(f"Recebido efeito do React: {effect}")
+            arduino.write((arduino_command + '\n').encode())
+            print(f"Recebido do React: {effect}")
             print(f"Enviado para Arduino: {arduino_command}")
             return {"status": "success", "effect": effect}, 200
 
@@ -62,4 +63,8 @@ def control_led():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=False)
+    try:
+        app.run(host="0.0.0.0", port=5000, debug=False)
+    finally:
+        if arduino.is_open:
+            arduino.close()

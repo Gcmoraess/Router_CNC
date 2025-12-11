@@ -14,6 +14,7 @@ import Navbar from './componentes/Layout/Navbar'
 import Footer from './componentes/Layout/Footer'
 
 
+
 function App() {
   return (
     
@@ -34,7 +35,9 @@ function App() {
        <Route exact path= "/HomeCamera" element={<HomeCamera/>}/>
      </Routes>
      </Container>
-    
+
+      
+
      <Footer/>
      </Router>
   );

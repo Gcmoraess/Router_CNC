@@ -1,52 +1,54 @@
-import { useState } from 'react';
-import style from './ListaSensores.module.css';
-import ModalModoEscuro from './ModalModoEscuro';
+import { useState } from "react";
+import style from "./ListaSensores.module.css";
+import ModalModoEscuro from "./ModalModoEscuro";
 
 function ListaSensores({ isOpenLS, setOpenList, itens, className }) {
-    
-    const [openModoEscuro, setOpenModoEscuro] = useState(false);
+  // Estados
+  const [statusSensores] = useState(itens.map(() => false));
+  const [openModoEscuro, setOpenModoEscuro] = useState(false);
 
-    if (!isOpenLS) return null;
+  if (!isOpenLS) return null;
 
-    return (
-        <>
-            <div className={`${style.listaSensores} ${className || ''}`}>
-                {itens.map((item, index) => (
-                    <div key={index} className={style.sensorItem}>
-                        <span className={style.circulo}></span>
-                        <p>{item}</p>
-                    </div>
-                ))}
+  return (
+    <>
+      <div className={`${style.listaSensores} ${className || ""}`}>
 
-                {/* Botão para fechar a lista */}
-                <div>
-                    <button
-                        className={style.closeButton} 
-                        onClick={() => setOpenList(false)}
-                    >
-                        Fechar
-                    </button>
-                </div>
+        {/* Lista de Sensores */}
+        {itens.map((item, index) => (
+          <div key={index} className={style.sensorItem}>
+            <span
+              className={`${style.circulo} ${
+                statusSensores[index] ? style.ativo : style.inativo
+              }`}
+            ></span>
+            <p>{item}</p>
+          </div>
+        ))}
 
-                {/* Botão para abrir o Modal */}
-                <div className={style.botaoEscuro}>
-                    <button 
-                        className={style.escuro} 
-                        onClick={() => setOpenModoEscuro(true)}
-                    >
-                        Modo Escuro
-                    </button>
-                </div>
-                
-            </div>
+        {/* Botão Fechar */}
+        <button
+          className={style.closeButton}
+          onClick={() => setOpenList(false)}
+        >
+          Fechar
+        </button>
 
-            {/* Modal dentro da Lista */}
-            <ModalModoEscuro
-                isOpen={openModoEscuro}
-                setOpen={setOpenModoEscuro}
-            />
-        </>
-    );
+        {/* Botão Abrir Modo Escuro */}
+        <button
+          className={style.escuro}
+          onClick={() => setOpenModoEscuro(true)}
+        >
+          Modo Escuro
+        </button>
+      </div>
+
+      {/* Modal */}
+      <ModalModoEscuro 
+        isOpen={openModoEscuro} 
+        setOpen={setOpenModoEscuro} 
+      />
+    </>
+  );
 }
 
 export default ListaSensores;

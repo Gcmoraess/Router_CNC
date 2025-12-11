@@ -1,25 +1,39 @@
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1px;               /* espaço entre os dois elementos */
-    padding: 10px;
-    margin-top: 20px;
+    gap: 40px;              /* espaçamento REAL entre os elementos */
+    margin-top: 0px;
 }
 
-.listaDashbord, .listaDashbord2 {
-    position: static; /* sobrescreve o fixed */
-    transform: scale(0.9);  /* 80% do tamanho original */
-    transform-origin: top left; /* mantém posição correta */
-
+/* Cards de sensores e estrutura */
+.listaDashbord
+ {
     background-color: #222;
-    margin-left: 1px;
-    margin-top: 15px;
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
- 
+    padding: 20px;
+    scale: 0.9;
+
+    /* Remover tudo que quebra layout */
+    position: static;
+    transform: none;
+   
 }
 
+.listaDashbord2 {
+    background-color: #222;
+    border-radius: 15px;
+    padding: 20px;
+    scale: 0.9;
+
+    /* Remover tudo que quebra layout */
+    position: static;
+    transform: none;
+
+}
+
+/* Gráfico */
 .homeNivelAgua {
-    max-width: 500px;        /* largura máxima para o gráfico */
+    width: 100%;        /* ocupa o espaço da coluna */
+    max-width: 650px;   /* ajuste conforme o gráfico */
+    justify-self: center;
 }
-

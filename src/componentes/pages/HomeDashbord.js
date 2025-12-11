@@ -3,13 +3,14 @@ import ListaSensores from '../Modal/ListaSensores'
 import HomeNivelAgua from './HomeNivelAgua'
 import SensoresEstrutura from '../Modal/SensoresEstrutura'
 import { useState } from 'react'
+import HomeCamera from './HomeCamera'
 
 
 // Importando diretamente o array de sensores
 const sensoresDaRouter = [  
     'Sensor X AV', 'Sensor X RC', 'Sensor Y AV',
-    'Sensor Y RC', 'Sensor Z RC', 'Sensor Home Y',
-    'Sensor Home Z', 'Sensor Home X' 
+    'Sensor Y RC', 'Sensor Z RC', 'Home Y',
+    'Home Z', 'Home X' 
 ]
 
 const sensoresEstrutura = [  
@@ -23,6 +24,12 @@ function Dashbord() {
     return (
        <div className={style.container}>
 
+    
+
+     <HomeNivelAgua className={style.homeNivelAgua} />
+        
+     <HomeCamera/>
+
      <ListaSensores 
         itens={sensoresDaRouter} 
         isOpenLS={openList} 
@@ -30,8 +37,6 @@ function Dashbord() {
         className={style.listaDashbord}
      />
 
-        <HomeNivelAgua className={style.homeNivelAgua} />
-        
      <SensoresEstrutura
         itens1={sensoresEstrutura} 
         isOpen3={openEstr} 

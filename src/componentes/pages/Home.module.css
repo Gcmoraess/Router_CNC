@@ -4,6 +4,7 @@
     align-items: center;
     height: 100vh;
     padding: 2em;
+    margin-top: 80px;
 }
 
 .buttons_container{
@@ -22,7 +23,7 @@
 .img {
     width: 100%;
     height: auto;
-    margin-left: 100px;
+    margin-left: 10px;
 }
 
 .button1,
@@ -51,3 +52,4 @@
     opacity: 0.5;
     transform: scale(1.05);
 }
+

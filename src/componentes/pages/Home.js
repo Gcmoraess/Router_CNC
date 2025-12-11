@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom'
-import Router225 from '../../img/Router225.png'
+import ChatGPT_Router1 from '../../img/ChatGPT_Router1.png'
 import styles from './Home.module.css'
 import { AiOutlineAreaChart } from "react-icons/ai";
 import { AiFillCamera } from "react-icons/ai";
@@ -34,9 +34,10 @@ function Home () {
         </div>
         
         <div className={styles.img}> 
-         <img src={Router225} alt="Router" width='450px' height='450px' /> 
+         <img src={ChatGPT_Router1} alt="Router" width='600px' height='650px' /> 
         </div>
         </section>
+        
     )
 }
 

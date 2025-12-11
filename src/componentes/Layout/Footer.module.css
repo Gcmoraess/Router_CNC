@@ -1,15 +1,26 @@
 .footer {
-    background-color: #222;
-    color: #fff;
-    padding: 3em;
+    width: 100%;
+    padding: 2.5em 1em;
     text-align: center;
-    list-style: none;
+
+    background: rgba(40, 40, 40, 0.65);       /* igual navbar */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.25);
+
+    color: #fff;
+    margin-top: auto; /* empurra o footer pro fim da página */
+    cursor: pointer;
+  
 }
 
 .social_list {
     display:flex;
     justify-content: center;
     list-style-type: none;
+    
 }   
 
 .social_list li {
@@ -19,6 +30,7 @@ margin: 0 1em;
 
 .social_list li:hover {
 color: #4726db;
+transition: 0.2s;
 }
 
 

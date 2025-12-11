@@ -9,8 +9,8 @@ function WaterLevelChart() {
 
   useEffect(() => {
     const data = [
-      [0], // eixo X (tempo)
-      [0], // eixo Y (nível de água)
+      [], // eixo X (índices apenas)
+      [], // eixo Y (vazão)
     ];
 
     const options = {
@@ -23,34 +23,49 @@ function WaterLevelChart() {
       series: [
         {},
         {
-          label: "Nível",
+          label: "Vazão (L/min)",
           stroke: "blue",
           fill: "rgba(0, 0, 255, 0.2)",
           width: 2,
         },
       ],
-      legend: { show: false },
+      axes: [
+        {
+          show: false, // 👈 remove o eixo X visualmente
+        },
+        {
+          label: "Vazão (L/min)",
+        },
+      ],
     };
 
-    // cria o gráfico
     uplotRef.current = new uPlot(options, data, chartRef.current);
 
-    let t = 1;
     const maxPoints = 20;
-    const interval = setInterval(() => {
-      data[0].push(t);
-      data[1].push(Math.random() * 100);
+    let index = 0;
 
-      if (data[0].length > maxPoints) {
-        data[0].shift();
-        data[1].shift();
+    const fetchFluxo = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/fluxo");
+        const json = await response.json();
+        const vazao = json.vazao_L_min || 0;
+
+        data[0].push(index++); // só pra manter o formato
+        data[1].push(vazao);
+
+        if (data[0].length > maxPoints) {
+          data[0].shift();
+          data[1].shift();
+        }
+
+        uplotRef.current.setData(data);
+      } catch (error) {
+        console.error("Erro ao buscar dados de vazão:", error);
       }
+    };
 
-      uplotRef.current.setData(data);
-      t++;
-    }, 1000);
+    const interval = setInterval(fetchFluxo, 1000);
 
-    // cleanup: destruir gráfico e intervalo
     return () => {
       clearInterval(interval);
       if (uplotRef.current) {
@@ -62,7 +77,7 @@ function WaterLevelChart() {
 
   return (
     <div className={styles.chartContainer}>
-      <div className={styles.chartTitle}>Monitoramento de Água</div>
+      <div className={styles.chartTitle}>Vazão de Água (Instantânea)</div>
       <div ref={chartRef}></div>
     </div>
   );
