@@ -24,11 +24,9 @@ function Dashbord() {
     return (
        <div className={style.container}>
 
-    
-
      <HomeNivelAgua className={style.homeNivelAgua} />
         
-     <HomeCamera/>
+     <HomeCamera className={style.homeCamera} />
 
      <ListaSensores 
         itens={sensoresDaRouter} 

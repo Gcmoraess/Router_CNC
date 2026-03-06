@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;              /* espaçamento REAL entre os elementos */
-    margin-top: 0px;
+    align-items: start;
 }
 
 /* Cards de sensores e estrutura */
@@ -11,7 +11,7 @@
     background-color: #222;
     border-radius: 15px;
     padding: 20px;
-    scale: 0.9;
+    margin-bottom: 50px;
 
     /* Remover tudo que quebra layout */
     position: static;
@@ -23,7 +23,6 @@
     background-color: #222;
     border-radius: 15px;
     padding: 20px;
-    scale: 0.9;
 
     /* Remover tudo que quebra layout */
     position: static;
@@ -35,5 +34,13 @@
 .homeNivelAgua {
     width: 100%;        /* ocupa o espaço da coluna */
     max-width: 650px;   /* ajuste conforme o gráfico */
+    justify-self: center;
+}
+
+.homeCamera {
+    width: 100%;        /* ocupa o espaço da coluna */
+    max-width: 650px;   /* ajuste conforme o gráfico */
+    height: 100%;        /* ocupa o espaço da coluna */
+    max-height: 650px;
     justify-self: center;
 }

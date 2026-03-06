@@ -14,8 +14,8 @@
 .modal {
     background-color: #222;
     color: white;
-    padding: 6em;
-    border-radius: 15px;
+    padding: 4em;
+    border-radius: 30px;
     text-align: center;
     z-index: 9999; /* 🔥 Novo: o conteúdo do modal fica ainda mais acima */
     position: relative; /* 🔥 Necessário para o z-index funcionar */
@@ -54,6 +54,11 @@
 
 .azul {
     background-color: #5512ff;
+    color: white;
+}
+
+.azulClaro {
+    background-color: #7178ff;
     color: white;
 }
 

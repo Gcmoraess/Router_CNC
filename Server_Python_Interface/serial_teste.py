@@ -56,6 +56,7 @@ color_map = {
     "green": "G",
     "red": "R",
     "blue": "B",
+    "light blue": "LB",
     "yellow": "Y",
     "cyan": "C",
     "purple": "P",

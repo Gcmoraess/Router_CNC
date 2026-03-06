@@ -8,7 +8,7 @@ function Camera () {
              src="http://192.168.0.15:5000/camera/stream"  // <- URL do seu Python
              alt="Camera Ao Vivo"
              width="650px"
-             height="550px"
+             height="500px"
              style={{ 
                 border: "3px solid #000", 
                 borderRadius: "25px",

@@ -15,7 +15,7 @@ function WaterLevelChart() {
 
     const options = {
       width: 600,
-      height: 300,
+      height: 400,
       scales: {
         x: { time: false },
         y: { auto: true },

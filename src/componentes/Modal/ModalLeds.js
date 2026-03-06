@@ -29,6 +29,7 @@ function ModalLeds ({ isOpen, setOpen }) {
             <button className={style.ciano} onClick={() => sendCommand('cyan')}>Ciano</button>
             <button className={style.roxo} onClick={() => sendCommand('purple')}>Roxo</button>
             <button className={style.azul} onClick={() => sendCommand('blue')}>Azul</button>
+            <button className={style.azulClaro} onClick={() => sendCommand('light blue')}>Azul claro</button>
         </div>
 
         <button className={style.closeButton} onClick={() => setOpen(false)}> Fechar </button>
