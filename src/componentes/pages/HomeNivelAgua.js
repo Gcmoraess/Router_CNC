@@ -9,8 +9,8 @@ function WaterLevelChart() {
 
   useEffect(() => {
     const data = [
-      [], // eixo X (índices apenas)
-      [], // eixo Y (vazão)
+      [], // eixo X
+      [], // eixo Y
     ];
 
     const options = {
@@ -18,7 +18,9 @@ function WaterLevelChart() {
       height: 400,
       scales: {
         x: { time: false },
-        y: { auto: true },
+        y: {
+          range: [0, 20], // escala fixa
+        },
       },
       series: [
         {},
@@ -31,7 +33,7 @@ function WaterLevelChart() {
       ],
       axes: [
         {
-          show: false, // 👈 remove o eixo X visualmente
+          show: false, // remove eixo X
         },
         {
           label: "Vazão (L/min)",
@@ -44,30 +46,55 @@ function WaterLevelChart() {
     const maxPoints = 20;
     let index = 0;
 
+    let targetValue = 0;   // valor vindo do Arduino
+    let currentValue = 0;  // valor mostrado no gráfico
+    let lastValue = 0;     // para suavização
+
+    // busca dados do backend
     const fetchFluxo = async () => {
       try {
         const response = await fetch("http://localhost:5000/api/fluxo");
         const json = await response.json();
-        const vazao = json.vazao_L_min || 0;
+        const raw = json.vazao_L_min || 0;
 
-        data[0].push(index++); // só pra manter o formato
-        data[1].push(vazao);
+        // filtro suave
+        const filtered = lastValue * 0.7 + raw * 0.3;
+        lastValue = filtered;
 
-        if (data[0].length > maxPoints) {
-          data[0].shift();
-          data[1].shift();
-        }
+        targetValue = filtered;
 
-        uplotRef.current.setData(data);
       } catch (error) {
         console.error("Erro ao buscar dados de vazão:", error);
       }
     };
 
-    const interval = setInterval(fetchFluxo, 1000);
+    // animação suave do gráfico
+    const animate = () => {
+
+      // aproxima lentamente do valor real
+      currentValue += (targetValue - currentValue) * 0.1;
+
+      data[0].push(index++);
+      data[1].push(currentValue);
+
+      if (data[0].length > maxPoints) {
+        data[0].shift();
+        data[1].shift();
+      }
+
+      uplotRef.current.setData(data);
+    };
+
+    // busca dados 1 vez por segundo
+    const fetchInterval = setInterval(fetchFluxo, 1000);
+
+    // anima gráfico 10 vezes por segundo
+    const animationInterval = setInterval(animate, 100);
 
     return () => {
-      clearInterval(interval);
+      clearInterval(fetchInterval);
+      clearInterval(animationInterval);
+
       if (uplotRef.current) {
         uplotRef.current.destroy();
         uplotRef.current = null;
@@ -77,7 +104,9 @@ function WaterLevelChart() {
 
   return (
     <div className={styles.chartContainer}>
-      <div className={styles.chartTitle}>Vazão de Água (Instantânea)</div>
+      <div className={styles.chartTitle}>
+        Vazão de Água (Instantânea)
+      </div>
       <div ref={chartRef}></div>
     </div>
   );
