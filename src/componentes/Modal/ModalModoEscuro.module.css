@@ -1,0 +1,73 @@
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.634);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    background-color: #222;
+    color: #FFF;
+    padding: 6em;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.modal h1 {
+    margin-bottom: 1em;
+}
+
+.container_buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 1em;
+    cursor: pointer;
+}
+
+.container_buttons button {
+    margin-top: 15px;
+    padding: 25px 60px;
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 20px;
+}
+
+.container_buttons button:hover {
+    opacity: 0.5;
+    transform: scale(1.05);
+}
+
+
+.ativado {
+    background-color: #00dc3e;
+    color: black;
+}
+
+.desativado {
+    background-color: #d20303de;
+    color: white;
+}
+
+.closeButton {
+  margin-top: 3.5em;
+  background-color: #333;
+  color: white;
+  padding: 0.5em 1.2em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.closeButton:hover {
+  background-color: #555;
+}

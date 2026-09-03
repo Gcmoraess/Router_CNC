@@ -1,0 +1,87 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1em 2em;
+
+    background: rgba(40, 40, 40, 0.65);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    z-index: 10;
+}
+
+/* Segunda barra com os links */
+
+.subnav {
+    position: fixed;
+    top: 107px;
+    left: 0;
+
+    width: 100%;
+    height: 55px;
+
+    display: flex;
+
+    background: rgba(40, 40, 40, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+    z-index: 9;
+}
+
+
+/* Cada botão */
+
+.item {
+       flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #FFF;
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+
+    transition: 0.3s;
+}
+
+/* Remove a borda do último botão */
+
+.item:last-child {
+    border-right: none;
+}
+
+
+/* Quando passar o mouse */
+
+.item:hover {
+    background: rgba(71, 38, 219, 0.35);
+    color: #FFF;
+}
+
+
+/* Logo */
+
+.imglogo {
+    display: flex;
+    align-items: center;
+}
+

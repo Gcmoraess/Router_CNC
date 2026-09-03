@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+
+.button:hover {
+    color: blue;
+}
+
+.buttonSRouter {
+    background-color: #2371e7;
+    padding: 25px 55px;
+    color: #FFF;
+    border-radius: 15px;
+    font-size: 1.5em;
+    cursor: pointer ;
+    transition: 0.5s;  
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.buttonSRouter:hover {
+    color:  #110250;
+    transition: 0.5s;
+    opacity: 0.5;
+    transform: scale(1.05);
+}
+
+.buttonEstrutura {
+    background-color: #2371e7;
+    padding: 25px 55px;
+    color: #FFF;
+    border-radius: 15px;
+    font-size: 1.5em;
+    cursor: pointer ;
+    transition: 0.5s;  
+    font-weight: bold;
+    margin-left: 35px;
+}
+
+.buttonEstrutura:hover {
+    color:  #110250;
+    transition: 0.5s;
+    opacity: 0.5;
+    transform: scale(1.05);
+}

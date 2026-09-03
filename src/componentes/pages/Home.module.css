@@ -1,0 +1,34 @@
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.routerVideo {
+    position: absolute;
+
+    width: 900px;
+    height: 900px;
+
+    object-fit: contain;
+
+    margin-left: 535px;
+    margin-top: -75px;
+    margin-bottom: -155px;
+
+    z-index: 2;
+}
+
+.backgroundVideo {
+    position: absolute;
+
+    width: 60%;
+    height: 60%;
+    margin-top: 175px;
+  
+    object-fit: cover;
+    margin-left: 50px;
+
+    z-index: 1;
+}

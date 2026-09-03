@@ -1,0 +1,30 @@
+.chartContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(67, 153, 234);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.2);
+  width: 705px;
+  margin-top: 180px;
+  margin-bottom: 50px;
+  margin-left: 350px;
+}
+
+.chartTitle {
+  font-size: 20px;
+  font-weight: bold;
+  color: #003366;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+/* estiliza só o gráfico */
+:global(.uplot) {
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.1);
+  width: 645px;
+}
