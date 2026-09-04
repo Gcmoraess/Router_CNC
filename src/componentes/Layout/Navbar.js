@@ -15,7 +15,9 @@ function Navbar () {
     return (
         <>   
         <nav className={styles.navbar}>   
+
           <Container className={styles.navbarContainer}>
+            
             <Link to="/" className={styles.imglogo}>
                  <img src={logoSyntroBranco}
                  alt="Logo da empresa"
@@ -23,7 +25,9 @@ function Navbar () {
                  height="75px"
                  />
             </Link>
+
           </Container>
+          
         </nav>
 
             <div className={styles.subnav}>

@@ -43,7 +43,8 @@ function HomeTemperature() {
           width: 7
         },
         detail: {
-          formatter: '{value} °C'
+          formatter: '{value} °C',
+          color: '#FFF'
         },
         data: [
           {
@@ -63,7 +64,7 @@ function HomeTemperature() {
 
       <ReactECharts 
         option={option} 
-        style={{ height: 500, width: 500 }} 
+        style={{ height: 400, width: 695 }} 
       />
       
     </div>

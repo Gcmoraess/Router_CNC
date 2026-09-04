@@ -1,29 +1,11 @@
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 85px;
+    gap: 55px;
     align-items: start;
     margin-top: 45px;
-}
-
-/* Cards de sensores e estrutura */
-.listaDashbord {
-    background-color: #222;
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 50px;
-
-    position: static;
-    transform: translate(0px, 0px);
-}
-
-.listaDashbord2 {
-    background-color: #222;
-    border-radius: 15px;
-    padding: 20px;
-
-    position: static;
-    transform: translate(0px, -150px);
+    margin-bottom: -155px;
+    margin-left: -55px;
 }
 
 /* Gráfico - Nível de Água */
@@ -48,5 +30,5 @@
 
 /* Temperatura */
 .homeTemperature_DashBord {
-    transform: translate(0px, -150px);
+    transform: translate( -0px, -275px);
 }
