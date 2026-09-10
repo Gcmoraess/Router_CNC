@@ -1,20 +1,26 @@
 .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding: 6em;  
     min-height: 90vh;
+    margin-top: 150px;
 }
 
-
-.button:hover {
-    color: blue;
+.botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
 }
 
-.buttonSRouter {
+.button {
+    display: flex;
+    align-items: center;
+    gap: 70px;
     background-color: #2371e7;
-    padding: 25px 55px;
+    padding: 25px 60px;
     color: #FFF;
     border-radius: 15px;
+    border: none;
     font-size: 1.5em;
     cursor: pointer ;
     transition: 0.5s;  
@@ -22,28 +28,14 @@
     margin-left: 15px;
 }
 
-.buttonSRouter:hover {
+.button:hover {
     color:  #110250;
     transition: 0.5s;
     opacity: 0.5;
     transform: scale(1.05);
 }
 
-.buttonEstrutura {
-    background-color: #2371e7;
-    padding: 25px 55px;
-    color: #FFF;
-    border-radius: 15px;
-    font-size: 1.5em;
-    cursor: pointer ;
-    transition: 0.5s;  
-    font-weight: bold;
-    margin-left: 35px;
-}
-
-.buttonEstrutura:hover {
-    color:  #110250;
-    transition: 0.5s;
-    opacity: 0.5;
-    transform: scale(1.05);
+.painelSensor {
+    width: 600px;
+    margin-left: 200px;
 }

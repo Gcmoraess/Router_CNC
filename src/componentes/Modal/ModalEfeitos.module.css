@@ -1,42 +1,43 @@
-.background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.65);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    z-index: 9998; /* 🔥 Novo: garante que o fundo escuro fica acima de tudo */
-}
 
 .modal {
     background-color: #222;
     color: white;
-    padding: 6em;
+    padding: 30px;
     border-radius: 15px;
     text-align: center;
-
-    z-index: 9999; /* 🔥 Novo: o conteúdo do modal fica ainda mais acima */
-    position: relative; /* 🔥 Necessário para o z-index funcionar */
 }
 
 .modal h1 {
-    margin-bottom: 1em;
+    margin-bottom: 15px;
 }
 
 .colorGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 25px;
-    margin-bottom: 1em;
+    margin-bottom: 15px;
 }
 
 .colorGrid button:hover {
   transform: scale(1.05);
 }
+
+/* Estilo geral para os botões */
+.colorGrid button {
+    margin-top: 15px;
+    padding: 25px 60px;
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 20px;
+}
+
+.colorGrid button:hover {
+    opacity: 0.8;
+}
+
 
 /* Cores */
 .vermelho {
@@ -69,33 +70,4 @@
     color: white;
 }
 
-/* Estilo geral para os botões */
-.colorGrid button {
-    margin-top: 15px;
-    padding: 25px 60px;
-    border: none;
-    border-radius: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    font-size: 20px;
-}
 
-.colorGrid button:hover {
-    opacity: 0.8;
-}
-
-.closeButton {
-  margin-top: 1.5em;
-  background-color: #333;
-  color: white;
-  padding: 0.5em 1.2em;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.closeButton:hover {
-  background-color: #555;
-}

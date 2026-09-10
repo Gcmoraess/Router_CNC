@@ -1,6 +1,6 @@
 import style from './ModalEfeitos.module.css'
 
-function Efeitos ({isOpen2, setModal}) {
+function Efeitos () {
 
     const sendCommand = async (effect) => {
     try {
@@ -9,18 +9,18 @@ function Efeitos ({isOpen2, setModal}) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ effect }),
       });
+
       if (!response.ok) throw new Error('Network error');
-      console.log(`Comando enviado: ${effect}`);
+         console.log(`Comando enviado: ${effect}`);
+
     } catch (error) {
       console.error('Erro ao enviar comando:', error);
     }
   };
 
-    if (isOpen2) {
-
         return (
-        <div className={style.background}>
-        <div className={style.modal}>
+      <div className={style.modal}>
+
         <h1>Escolha o efeito:</h1>
 
         <div className={style.colorGrid}>
@@ -29,15 +29,11 @@ function Efeitos ({isOpen2, setModal}) {
             <button className={style.amarelo} onClick={() => sendCommand('Duo cyron')}>Duo cyron</button>
             <button className={style.ciano} onClick={() => sendCommand('RGB')}>RGB</button>
             <button className={style.roxo} onClick={() => sendCommand('Fade')}>Fade</button>
-            <button className={style.azul} onClick={() => sendCommand('Fade alternating')}>Fade alternating</button>
+            <button className={style.azul} onClick={() => sendCommand('Fade alternating')}> Alternating</button>
         </div>
 
-        <button className={style.closeButton} onClick={() => setModal(false)}> Fechar </button>
       </div>
-    </div>
-        )
+     );
     }
-     
-}
-
+    
 export default Efeitos

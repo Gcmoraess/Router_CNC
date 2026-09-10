@@ -1,6 +1,6 @@
 import style from './ModalLeds.module.css'
 
-function ModalLeds ({ isOpen, setOpen }) {
+function ModalLeds () {
 
    const sendCommand = async (color) => {
     try {
@@ -9,20 +9,22 @@ function ModalLeds ({ isOpen, setOpen }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ color }),
       });
+
       if (!response.ok) throw new Error('Network error');
-      console.log(`Comando enviado: ${color}`);
+        console.log(`Comando enviado: ${color}`);
+
     } catch (error) {
       console.error('Erro ao enviar comando:', error);
     }
   };
 
- if (isOpen) {
   return (
-    <div className={style.background}>
       <div className={style.modal}>
+
         <h1>Escolha a cor do led:</h1>
 
         <div className={style.colorGrid}>
+
             <button className={style.vermelho} onClick={() => sendCommand('red')}>Vermelho</button>  
             <button className={style.verde} onClick={() => sendCommand('green')}>Verde</button>
             <button className={style.amarelo} onClick={() => sendCommand('yellow')}>Amarelo</button>
@@ -32,15 +34,9 @@ function ModalLeds ({ isOpen, setOpen }) {
             <button className={style.azulClaro} onClick={() => sendCommand('light blue')}>Azul claro</button>
         </div>
 
-        <button className={style.closeButton} onClick={() => setOpen(false)}> Fechar </button>
       </div>
-    </div>
-     ) 
+     );
     }
-    else {
-     return null;
-     }
-}
 
 export default ModalLeds
     

@@ -1,5 +1,5 @@
 .listaSensores {
-    position: fixed;
+    display: flex;
     top: 145px;
     left: 400px;
     
@@ -36,22 +36,6 @@
     flex-shrink: 0; /* impede que o flex aperte ele */
 }
 
-.closeButton {
-    margin-top: 10px;
-    background-color: #d30b0b;
-    color: white;
-    padding: 0.7em 1.5em;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-
-    z-index: 10000; /* sempre clicável */
-}
-
-.closeButton:hover {
-    background-color: #555;
-}
 
 .botaoEscuro {
     display: flex;

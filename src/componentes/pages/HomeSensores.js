@@ -5,30 +5,37 @@ import SensoresEstrutura from '../Modal/SensoresEstrutura'
 
 function HomeSensores () {
 
-const sensoresDaRouter = [  
-    'Sensor X AV', 'Sensor X RC', 'Sensor Y AV',
-    'Sensor Y RC', 'Sensor Z RC', 'Home Y',
-    'Home Z', 'Home X' ]
-
-const sensoresEstruturaRouter = [
-    'Sensor Porta', 'Sensor nivel de Agua' 
-]
-
-
-const [OpenLS, setOpenList] = useState (false)
-const [OpenEstrutura, setOpenEstrutura] = useState (false)
+const [painelSensor, setPainelSensor] = useState ('Router sensors')
 
     return (
         
-        <div className={style.container}>
+    <div className={style.container}>
 
-            <button className={style.buttonSRouter} onClick={() => setOpenList(!OpenLS)} >Router sensors</button>
-            <ListaSensores itens={sensoresDaRouter} isOpenLS={OpenLS} setOpenList={setOpenList}/>
+        <div className={style.botoes}>
 
-            <button className={style.buttonEstrutura} onClick={() => setOpenEstrutura(!OpenEstrutura)}>Structure sensors</button>
-            <SensoresEstrutura itens1={sensoresEstruturaRouter} isOpen3={OpenEstrutura} setOpenEstrutura={setOpenEstrutura}/> 
+            <button className={style.button}
+                onClick={() => setPainelSensor('Router sensors')} >
+                    Router sensors
+            </button>
+
+            <button className={style.button} 
+                onClick={() => setPainelSensor('Structure sensors')}>
+                    Structure sensors
+            </button>
 
         </div>
+
+            <div className={style.painelSensor}>
+
+                {painelSensor === 'Router sensors' &&
+                    <ListaSensores />
+                }
+
+                {painelSensor === 'Structure sensors' &&
+                    <SensoresEstrutura />
+                }
+            </div>
+     </div>
     )
 }
 

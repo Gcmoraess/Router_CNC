@@ -8,13 +8,14 @@ import ModalLeds from '../Modal/ModalLeds';
 import ModalEfeitos from '../Modal/ModalEfeitos';
 
 function HomeLeds() {
-  const [open, setOpen] = useState(false);
+  const [painel, setPainel] = useState('colors');
   const [LedsOn, setLedsOn] = useState(false);
-  const [openModal, setModal] = useState(false);
+  
 
   // ⬇️ Carrega o estado salvo quando a página abrir
   useEffect(() => {
     const savedState = localStorage.getItem('estadoLeds');
+
     if (savedState === 'ON') {
       setLedsOn(true);
     } else if (savedState === 'OFF') {
@@ -29,14 +30,18 @@ function HomeLeds() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ color: LedsOnOff }),
       });
+
       if (!response.ok) throw new Error('Network error');
-      console.log(`Comando enviado: ${LedsOnOff}`);
+
+        console.log(`Comando enviado: ${LedsOnOff}`);
+
     } catch (error) {
-      console.error('Erro ao enviar comando:', error);
+        console.error('Erro ao enviar comando:', error);
     }
   };
 
   const mudarEstadoOnOff = () => {
+
     setLedsOn(prev => {
       const next = !prev;
 
@@ -54,15 +59,17 @@ function HomeLeds() {
   return (
     <div className={styles.container_homeLeds}>
 
-      <button className={styles.buttons} onClick={() => setOpen(!open)}>
+      <div className={styles.botoes}>
+
+      <button className={styles.buttons}
+        onClick={() => setPainel('colors')}>
         Colors <IoIosColorPalette />
       </button>
-      <ModalLeds isOpen={open} setOpen={setOpen} />
 
-      <button className={styles.buttons} onClick={() => setModal(!openModal)}>
+      <button className={styles.buttons}
+        onClick={() => setPainel('effects')}>
         Effects <BsController />
       </button>
-      <ModalEfeitos isOpen2={openModal} setModal={setModal} />
 
       <button  
         className={`${styles.buttons} ${LedsOn ? styles.LedsOn : ''}`} 
@@ -71,7 +78,15 @@ function HomeLeds() {
         {LedsOn ? 'ON' : 'OFF'} <FaPowerOff />
       </button>
 
+      </div>
+
+      <div className={styles.painel}>
+          {painel === 'colors' && <ModalLeds />}
+          {painel === 'effects' && <ModalEfeitos />}
+      </div>
+
     </div>
+
   );
 }
 

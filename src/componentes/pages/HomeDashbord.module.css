@@ -1,11 +1,11 @@
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 55px;
+    gap: 35px;
     align-items: start;
-    margin-top: 45px;
-    margin-bottom: -155px;
-    margin-left: -55px;
+    margin-top: 35px;
+    margin-bottom: -135px;
+    margin-left: -35px;
 }
 
 /* Gráfico - Nível de Água */
@@ -14,7 +14,7 @@
     max-width: 650px;
     justify-self: center;
 
-    transform: translate(-350px, 0px) scale(1);
+    transform: translate(-325px, 0px) scale(1);
 }
 
 /* Câmera */

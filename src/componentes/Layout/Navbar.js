@@ -26,6 +26,10 @@ function Navbar () {
                  />
             </Link>
 
+            <div className={styles.textoVersao}>
+                <h1>V3.5</h1>
+            </div>
+
           </Container>
           
         </nav>

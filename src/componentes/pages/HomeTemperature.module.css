@@ -1,7 +1,13 @@
 .container {
+    position: relative;
+
     margin-top: 225px;
-    margin-bottom: 100px;
+    margin-bottom: 55px;
     margin-left: 50px;
+
+    width: 650px;
+    height: 500px;
+
     color: aliceblue;
     background-color: rgb(36, 39, 41);
     border-radius: 15px;
@@ -15,4 +21,16 @@
     width: 500px;
     text-align: center;
     margin-top: 35px;
+    margin-bottom: -15px;
+}
+
+.grafico {
+    width: 750px;
+    height: 500px;
+}
+
+.graficoBarras {
+    position: absolute;
+    margin-left: 735px;
+    top: 5px;
 }

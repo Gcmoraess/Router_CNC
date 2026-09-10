@@ -1,8 +1,8 @@
 
 .home {
-    position: relative;
-    width: 100%;
-    height: 100vh;
+    display: flex;
+    align-items: center;
+    height: 80vh;
     margin-bottom: 105px;
 }
 
@@ -15,7 +15,7 @@
     object-fit: contain;
 
     margin-left: 535px;
-    margin-top: -35px;
+    margin-top: 155px;
 
     z-index: 2;
 }
@@ -23,8 +23,8 @@
 .backgroundVideo {
     position: absolute;
 
-    width: 60%;
-    height: 60%;
+    width: 50%;
+    height: 50%;
     margin-top: 195px;
   
     object-fit: cover;

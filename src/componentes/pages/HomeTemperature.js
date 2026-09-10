@@ -1,3 +1,4 @@
+import HomePicosTemp from './HomePicosTemp';
 import { useEffect, useState } from 'react';
 import ReactECharts from 'echarts-for-react';
 import styles from './HomeTemperature.module.css'
@@ -6,6 +7,7 @@ import styles from './HomeTemperature.module.css'
 function HomeTemperature() {
 
   const [temperatura, setTemperatura] = useState(0);
+
 
   useEffect(() => {
     const interval = setInterval(async () => {
@@ -19,8 +21,8 @@ function HomeTemperature() {
     }, 500);
 
     return () => clearInterval(interval);
-  }, []);
-
+  }, []); 
+  
   const option = {
     series: [
       {
@@ -28,6 +30,7 @@ function HomeTemperature() {
         min: 20,
         max: 80,
         splitNumber: 4,
+
         axisLine: {
           lineStyle: {
             width: 40,
@@ -39,13 +42,21 @@ function HomeTemperature() {
             ]
           }
         },
+
+        axisLabel: {
+          distance: 30,
+          color: '#FFF'
+        },
+
         pointer: {
           width: 7
         },
+
         detail: {
           formatter: '{value} °C',
           color: '#FFF'
         },
+
         data: [
           {
             value: temperatura
@@ -62,12 +73,23 @@ function HomeTemperature() {
         <h2>Temperatura do Spindle</h2>
       </div>
 
-      <ReactECharts 
-        option={option} 
-        style={{ height: 400, width: 695 }} 
-      />
-      
-    </div>
+      <div className={styles.graficos}>
+
+        <div className={styles.grafico}>
+          <ReactECharts 
+          option={option} 
+          style={{ height: 500, width: 750 }} 
+          />
+        </div>
+
+        <div className={styles.graficoBarras}>
+          <HomePicosTemp />
+        </div>
+
+        </div>
+        
+      </div>
+
   );
 }
 

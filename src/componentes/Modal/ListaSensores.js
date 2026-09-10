@@ -2,50 +2,56 @@ import { useState } from "react";
 import style from "./ListaSensores.module.css";
 import ModalModoEscuro from "./ModalModoEscuro";
 
-function ListaSensores({ isOpenLS, setOpenList, itens, className }) {
-  // Estados
-  const [statusSensores] = useState(itens.map(() => false));
-  const [openModoEscuro, setOpenModoEscuro] = useState(false);
+const sensoresDaRouter = [
+    'Sensor X AV',
+    'Sensor X RC',
+    'Sensor Y AV',
+    'Sensor Y RC',
+    'Sensor Z RC',
+    'Home Y',
+    'Home Z',
+    'Home X'
+];
 
-  if (!isOpenLS) return null;
+function ListaSensores() {
+
+  const [statusSensores] = useState(sensoresDaRouter.map(() => false));
+
+  const [openModoEscuro, setOpenModoEscuro] = useState(false);
 
   return (
     <>
-      <div className={`${style.listaSensores} ${className || ""}`}>
+      <div className={style.listaSensores}>
 
-        {/* Lista de Sensores */}
-        {itens.map((item, index) => (
+        {sensoresDaRouter.map((item, index) => (
+
           <div key={index} className={style.sensorItem}>
+
             <span
               className={`${style.circulo} ${
-                statusSensores[index] ? style.ativo : style.inativo
+                statusSensores[index]
+                  ? style.ativo
+                  : style.inativo
               }`}
             ></span>
+
             <p>{item}</p>
+
           </div>
         ))}
 
-        {/* Botão Fechar */}
-        <button
-          className={style.closeButton}
-          onClick={() => setOpenList(false)}
-        >
-          Fechar
-        </button>
-
-        {/* Botão Abrir Modo Escuro */}
         <button
           className={style.escuro}
           onClick={() => setOpenModoEscuro(true)}
         >
           Modo Escuro
         </button>
+
       </div>
 
-      {/* Modal */}
-      <ModalModoEscuro 
-        isOpen={openModoEscuro} 
-        setOpen={setOpenModoEscuro} 
+      <ModalModoEscuro
+        isOpen={openModoEscuro}
+        setOpen={setOpenModoEscuro}
       />
     </>
   );

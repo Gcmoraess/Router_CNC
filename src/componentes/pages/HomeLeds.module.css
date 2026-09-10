@@ -1,25 +1,29 @@
 .container_homeLeds {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    padding: 6em;
-    grid-template-columns: 1fr;
-    gap: 5px;   
+    display: flex;
+    align-items: flex-start;
+    padding: 6em;  
     min-height: 90vh;
-    margin-top: 105px;
+    margin-top: 150px;
+}
+.botoes{
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
 }
 
 .buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
     background-color: #2371e7;
     color: #FFF;
-    padding: 20px 50px;
+    padding: 15px 70px;
     border-radius: 15px;
     font-size: 1.5em;
     cursor: pointer ;
     font-weight: bold;
+    border: none;
 }
 
 .buttons:hover {
@@ -33,4 +37,9 @@
   
   color: #00ff80;
   transition: background-color 0.3s ease;
+}
+
+.painel {
+    width: 600px;
+    margin-left: 200px;
 }
