@@ -86,7 +86,7 @@ function HomePicosTemp () {
 
             <ReactECharts
                 option={option}
-                style={{ width: '600px', height: '400px' }}
+                style={{ width: '575px', height: '305px' }}
             />
 
         </div>

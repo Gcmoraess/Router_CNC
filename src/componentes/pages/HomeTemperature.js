@@ -1,14 +1,13 @@
 import HomePicosTemp from './HomePicosTemp';
 import { useEffect, useState } from 'react';
 import ReactECharts from 'echarts-for-react';
-import styles from './HomeTemperature.module.css'
-
+import styles from './HomeTemperature.module.css';
 
 function HomeTemperature() {
 
   const [temperatura, setTemperatura] = useState(0);
 
-
+  // Transferência de dados - mantida
   useEffect(() => {
     const interval = setInterval(async () => {
       try {
@@ -21,8 +20,9 @@ function HomeTemperature() {
     }, 500);
 
     return () => clearInterval(interval);
-  }, []); 
-  
+  }, []);
+
+  // Configurações do gráfico de temperatura
   const option = {
     series: [
       {
@@ -33,7 +33,7 @@ function HomeTemperature() {
 
         axisLine: {
           lineStyle: {
-            width: 40,
+            width: 30,
             color: [
               [0.25, '#00ff00'],
               [0.5, '#ffff00'],
@@ -54,7 +54,8 @@ function HomeTemperature() {
 
         detail: {
           formatter: '{value} °C',
-          color: '#FFF'
+          color: '#FFF',
+          fontSize: 20,
         },
 
         data: [
@@ -69,28 +70,30 @@ function HomeTemperature() {
   return (
     <div className={styles.container}>
 
-      <div className={styles.title}>
-        <h2>Temperatura do Spindle</h2>
-      </div>
+        {/* Gráfico de temperatura */}
+        <div className={styles.containerTemp}>
 
-      <div className={styles.graficos}>
+            <div className={styles.title}>
+                <h2>Temperatura do Spindle</h2>
+            </div>
 
-        <div className={styles.grafico}>
-          <ReactECharts 
-          option={option} 
-          style={{ height: 500, width: 750 }} 
-          />
-        </div>
-
-        <div className={styles.graficoBarras}>
-          <HomePicosTemp />
-        </div>
+            <div className={styles.graficoTemp}>
+                <ReactECharts
+                    option={option}
+                    style={{ width: '100%', height: '100%' }}
+                />
+            </div>
 
         </div>
-        
-      </div>
 
-  );
+
+        {/* Gráfico de picos */}
+            <div className={styles.graficoBarras}>
+                <HomePicosTemp />
+            </div>
+
+        </div>
+);
 }
 
 export default HomeTemperature;

@@ -10,7 +10,7 @@ function Dashbord() {
        <div className={style.container}>
 
     <div className={style.homeNivelAgua_Dashbord}>
-        <HomeNivelAgua  />
+        <HomeNivelAgua />
     </div>
 
     <div className={style.homeCamera_Dashbord}>

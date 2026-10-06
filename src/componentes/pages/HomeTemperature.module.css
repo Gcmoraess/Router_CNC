@@ -1,36 +1,55 @@
 .container {
-    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
 
-    margin-top: 225px;
-    margin-bottom: 55px;
-    margin-left: 50px;
+    width: 100%;
 
-    width: 650px;
-    height: 500px;
+    margin-top: 20vw;
+    margin-bottom: 10vw;
+    margin-left: -3vw;
+}
 
-    color: aliceblue;
+
+/* ============================= */
+/* GRÁFICO DE TEMPERATURA */
+/* ============================= */
+
+.containerTemp {
+    width: 40vw;
+    height: 34vw;
+
+    margin-left: 20px;
+
     background-color: rgb(36, 39, 41);
     border-radius: 15px;
 
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .title {
-    width: 500px;
     text-align: center;
-    margin-top: 35px;
+
+    margin-top: 25px;
     margin-bottom: -15px;
+
+    color: aliceblue;
 }
 
-.grafico {
-    width: 750px;
-    height: 500px;
+.graficoTemp {
+    width: 40vw;
+    height: 35vw;
 }
+
+
+/* ============================= */
+/* GRÁFICO DE PICOS */
+/* ============================= */
+
 
 .graficoBarras {
-    position: absolute;
-    margin-left: 735px;
-    top: 5px;
+    width: 51vw;
+    height: 35vw;
+    margin-left: 0;
+
 }

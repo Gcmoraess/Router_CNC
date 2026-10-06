@@ -3,24 +3,24 @@
     align-items: flex-start;
     padding: 6em;  
     min-height: 90vh;
-    margin-top: 150px;
+    margin-top: 125px;
+    margin-left: -2vw;
 }
 .botoes{
     display: flex;
     flex-direction: column;
-    gap: 70px;
+    gap: 4vw;
 }
 
 .buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
     background-color: #2371e7;
     color: #FFF;
-    padding: 15px 70px;
+    padding: 0.9vw 7vw;
     border-radius: 15px;
-    font-size: 1.5em;
+    font-size: 2vw;
     cursor: pointer ;
     font-weight: bold;
     border: none;
@@ -40,6 +40,10 @@
 }
 
 .painel {
-    width: 600px;
-    margin-left: 200px;
+    width: 100%;
+    width: 580px;
+    margin-left: 4vw;
+    transform: scale(0.85);
+    margin-top: -4vw;
+    
 }

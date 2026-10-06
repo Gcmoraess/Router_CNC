@@ -5,7 +5,6 @@ import Contact from './componentes/pages/Contact'
 import NewProject from './componentes/pages/NewProject'
 import HomeLeds from './componentes/pages/HomeLeds'
 import HomeSensores from './componentes/pages/HomeSensores'
-import HomeNivelAgua from './componentes/pages/HomeNivelAgua'
 import HomeDashbord from './componentes/pages/HomeDashbord'
 import HomeCamera from './componentes/pages/HomeCamera'
 import HomeTemperature from "./componentes/pages/HomeTemperature";
@@ -30,7 +29,6 @@ function App() {
        <Route exact path= "/newProject" element={<NewProject/>}/>
        <Route exact path= "/homeLeds" element={<HomeLeds/>}/>
        <Route exact path= "/homeSensores" element={<HomeSensores/>}/>
-       <Route exact path= "/homeNivelAgua" element={<HomeNivelAgua/>}/>
        <Route exact path= "/homeDashbord" element={<HomeDashbord/>}/>
        <Route exact path= "/homeCamera" element={<HomeCamera/>}/>
        <Route exact path= "/homeTemperature" element={<HomeTemperature/>}/>

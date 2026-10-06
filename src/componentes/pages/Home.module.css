@@ -2,19 +2,19 @@
 .home {
     display: flex;
     align-items: center;
-    height: 80vh;
+    height: 78vh;
     margin-bottom: 105px;
 }
 
 .routerVideo {
     position: absolute;
 
-    width: 900px;
-    height: 900px;
+    width: 47vw;
+    height: 47vw;
 
     object-fit: contain;
 
-    margin-left: 535px;
+    left: clamp(450px, 50vw, 920px);
     margin-top: 155px;
 
     z-index: 2;
@@ -28,7 +28,7 @@
     margin-top: 195px;
   
     object-fit: cover;
-    margin-left: 35px;
+    left: clamp(20px, 5vw, 55px);
 
     z-index: 1;
 }

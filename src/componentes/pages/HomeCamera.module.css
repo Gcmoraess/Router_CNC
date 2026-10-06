@@ -1,7 +1,18 @@
 .container {
-    text-wrap: wrap;
+    width: 40vw;
+    height: 35vw;
+
+    margin-top: 17vw;
+    margin-bottom: 10vw;
+
     color: white;
-    margin-top: 180px;
-    margin-bottom: 50px;
 }
 
+.container img {
+    width: 40vw;
+    height: 35vw;
+
+    border: 3px solid #000;
+    border-radius: 25px;
+    object-fit: cover;
+}

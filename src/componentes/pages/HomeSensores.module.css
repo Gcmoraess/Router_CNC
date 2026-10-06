@@ -3,25 +3,25 @@
     align-items: flex-start;
     padding: 6em;  
     min-height: 90vh;
-    margin-top: 150px;
+    margin-top: 125px;
+    margin-left: -5vw;
 }
 
 .botoes {
     display: flex;
     flex-direction: column;
-    gap: 70px;
+    gap: 5vw;
 }
 
 .button {
     display: flex;
     align-items: center;
-    gap: 70px;
     background-color: #2371e7;
-    padding: 25px 60px;
+    padding: 0.9vw 7vw;
     color: #FFF;
     border-radius: 15px;
     border: none;
-    font-size: 1.5em;
+    font-size: 2vw;
     cursor: pointer ;
     transition: 0.5s;  
     font-weight: bold;
@@ -36,6 +36,9 @@
 }
 
 .painelSensor {
-    width: 600px;
-    margin-left: 200px;
+    width: 100%;
+    width: 590px;
+    margin-left: 2vw;
+    transform: scale(0.85);
+    margin-top: -7vw;
 }
